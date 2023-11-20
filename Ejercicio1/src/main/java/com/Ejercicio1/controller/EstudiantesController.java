@@ -3,6 +3,7 @@ package com.Ejercicio1.controller;
 
 import com.Ejercicio1.domain.Estudiantes;
 import com.Ejercicio1.service.EstudiantesService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +21,7 @@ public class EstudiantesController {
 
         @GetMapping("/listado")
         public String inicio(Model model) {
-            var estudiante = estudiantesService.getEstudiantes();
+            List<Estudiantes> estudiante = estudiantesService.getEstudiantes();
             model.addAttribute("Estudiantes", estudiante);
             model.addAttribute("totalEstudiantes", estudiante.size());
             return "/estudiantes/listado";

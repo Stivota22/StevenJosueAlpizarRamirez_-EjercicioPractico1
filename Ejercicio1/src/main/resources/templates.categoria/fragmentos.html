@@ -1,15 +1,60 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Estudiantes - Tu Aplicación</title>
+</head>
+<body>
+    <header>
+        <h1>Estudiantes</h1>
+    </header>
+    
+   
+       <nav th:replace="templates.html">
+    <h1>Registros de la Base de Datos</h1>
+       
+    <button id="agregarBtn">Agregar Registro</button>
+    </nav>
+
+    <div class="container">
+        <h2>Listado de Estudiantes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Identificación</th>
+                    <th>Nivel Cursando</th>
+                    <th>Edad</th>
+                    <th>Altura</th>
+                    <th>Peso</th>
+                    <th>Género</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        </table>
+    </div>
+ <div id="formularioAgregar" style="display: none;">
+        <h2>Agregar Registro</h2>
+        <form id="agregarForm">
+            <input type="text" placeholder="Nombre" name="nombre">
+            <input type="text" placeholder="Identificación" name="identificacion">
+            <input type="text" placeholder="Nivel Cursando" name="nivelCursando">
+            <input type="number" placeholder="Edad" name="edad">
+            <input type="number" placeholder="Altura" name="altura">
+            <input type="number" placeholder="Peso" name="peso">
+            <input type="text" placeholder="Género" name="genero">
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2023 Tu Aplicación</p>
+    </footer>
+</body>
 </html>
